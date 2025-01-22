@@ -1,0 +1,82 @@
+/* Variables globales */
+:root{
+   --backgroundColor: antiquewhite;
+   --widthButton:8rem;
+   --widthImg:30%;
+   --widthImgCarrousel:50%;
+   --fontFamily:"Montserrat", serif;
+}
+
+/*Reseteo de las etiquetas*/
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--fontFamily);
+}
+
+/* Etiquetas por clase */
+.header{
+    margin:2rem;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.header__btn{
+    padding:0.5rem;
+    width: var(--widthButton);
+    margin-right: 0.5rem;
+    border-radius: 0.25rem;
+    border-width: 0.1rem;
+}
+
+.header__btn:hover{
+    background-color: darkgrey;
+    color: aliceblue;
+}
+
+.main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin:2rem;
+}
+
+.main__title{
+    width: 100%;
+    margin:1rem;
+}
+
+/* .main__title--change{
+    color: red;
+    text-align: center;
+} */
+
+.main__txt{
+    margin:1rem;
+}
+
+.main__sub{
+    display:flex;
+    justify-content:space-around;
+    margin-top:2rem;
+    margin-bottom:2rem;
+}
+
+.main__sub__fig{
+    width: var(--widthImg);
+    /* margin-left:0.5rem; */
+}
+
+.main__sub__fig__img{
+    width: 100%;
+}
+
+.main__carrusel{
+    display:flex;
+    justify-content: center;
+}
+
+.main__carrusel__img{
+    width: var(--widthImg);
+}
