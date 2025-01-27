@@ -1,7 +1,7 @@
 /* Variables globales */
 :root{
-   --backgroundColor: antiquewhite;
-   --widthButton:8rem;
+   --backgroundColor: red;
+   --widthButton:7rem;
    --widthImg:30%;
    --widthImgCarrousel:50%;
    --fontFamily:"Montserrat", serif;
@@ -31,7 +31,7 @@
 }
 
 .header__btn:hover{
-    background-color: darkgrey;
+    background-color: var(--backgroundColor);
     color: aliceblue;
 }
 

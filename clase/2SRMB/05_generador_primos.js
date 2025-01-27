@@ -18,23 +18,42 @@ document.addEventListener("DOMContentLoaded", function(){
     let min, max;
     let lst = [];
 
-    if(num_1 >= num_2){
-        max = num_1;
-        min = num_2;
-    }else{
-        max = num_2;
-        min = num_1;
-    }
+    if(num_1 > 0 && num_2 > 0){
 
-    for(let i = min; i <= max; i++){
-        if(esPrimo(i)){
-            lst.push(i);
+        // let esPrimo = (a) =>{
+
+        //     for(let i = 2; i < a; i++){
+        //         if(a % i == 0){
+        //             return false;
+        //         }
+        //     }
+    
+        //     return true;
+        // }
+
+        if(num_1 >= num_2){
+            max = num_1;
+            min = num_2;
+        }else{
+            max = num_2;
+            min = num_1;
         }
+    
+        for(let i = min; i <= max; i++){
+            if(esPrimo(i)){
+                lst.push(i);
+            }
+        }
+    
+        console.log(lst);
+
+    }
+    else{
+        console.log("Error");
+        console.log(esPrimo(45));
     }
 
-    console.log(lst);
-
-
+   
 
 
 });
