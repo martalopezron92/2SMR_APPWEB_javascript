@@ -96,5 +96,6 @@
 .texto{
     color : white;
     background-color: red;
+    text-align: center;
     margin: 2rem;
 }
