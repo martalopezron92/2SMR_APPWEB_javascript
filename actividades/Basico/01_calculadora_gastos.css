@@ -1,0 +1,67 @@
+:root{
+    --primaryColor:#90A9B7;
+    --secundaryColor: #292F36;
+    --accentColorPrimary: #E94F37;
+    --accentColorSecundary: antiquewhite;
+    --font:"Montserrat", serif;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: var(--primaryColor);
+    font-family: var(--font);
+}
+
+.header{
+    text-align: center;
+    padding: 5rem;
+    background-color: var(--secundaryColor);
+    color: var(--accentColorSecundary);
+}
+
+.header__title{
+    background-color: var(--secundaryColor);
+}
+
+.main{
+    margin:5rem 3rem 5rem 3rem;
+}
+
+.main__data{
+    display:flex;
+    justify-content: center;
+}
+
+.main__data__form{
+    width: 30%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start
+}
+
+.main__data__form__label{
+    width: 80%;
+    margin-bottom: 3rem;
+    font-weight: bold;
+}
+
+.main__data__form__input{
+    width: 20%;
+    border-width: 0.1rem;
+    padding: 0.25rem;
+    border-radius: 0.25rem;
+    background-color: var(--accentColorPrimary);
+}
+
+.main__data__form__btn{
+    padding: 0.4rem;
+    border-radius: 0.25rem;
+    background-color: var(--secundaryColor);
+    color: var(--accentColorSecundary);
+    border-width: 0.1rem;
+    border-color: var(--secundaryColor);
+}
+
+

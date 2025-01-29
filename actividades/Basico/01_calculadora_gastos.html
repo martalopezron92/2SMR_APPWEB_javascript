@@ -4,9 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora de gastos de viaje</title>
-    <script src="./01_calculadora_gastos.js" type="text/javascript"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./01_calculadora_gastos.css">
+    <script src="./01_calculadora_gastos.js" defer type="text/javascript"></script>
 </head>
 <body>
-    <h1>Calculadora de los gastos de viaje</h1>
+    <header class="header">
+        <h1 class="header__title">Calculadora de los gastos de viaje</h1>
+    </header>
+    <main class="main">
+        <section class="main__data">
+            <form class="main__data__form">
+                <label for="alojamiento" class="main__data__form__label">Gastos de alojamiento</label>
+                <input type="text" id = "alojamiento" class="main__data__form__input">
+                <label for="alimentacion" class="main__data__form__label">Gastos de alimentacion</label>
+                <input type="text" id = "alimentacion"  class="main__data__form__input">
+                <label for="ocio" class="main__data__form__label">Gastos de ocio</label>
+                <input type="text" id = "ocio"  class="main__data__form__input">
+                <button class="main__data__form__btn">Calcular total</button>
+            </form>
+            <article class="main__result"></article>
+        </section>
+    </main>
 </body>
 </html>

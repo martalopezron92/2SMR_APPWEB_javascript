@@ -2,8 +2,8 @@
 :root{
    --backgroundColor: red;
    --widthButton:7rem;
-   --widthImg:30%;
-   --widthImgCarrousel:50%;
+   --widthImg:25%;
+   --widthImgCarrousel:30%;
    --fontFamily:"Montserrat", serif;
 }
 
@@ -30,11 +30,6 @@
     border-width: 0.1rem;
 }
 
-.header__btn:hover{
-    background-color: var(--backgroundColor);
-    color: aliceblue;
-}
-
 .main{
     display: flex;
     flex-direction: column;
@@ -47,18 +42,13 @@
     margin:1rem;
 }
 
-/* .main__title--change{
-    color: red;
-    text-align: center;
-} */
-
 .main__txt{
     margin:1rem;
 }
 
 .main__sub{
     display:flex;
-    justify-content:space-around;
+    justify-content:space-evenly;
     margin-top:2rem;
     margin-bottom:2rem;
 }
@@ -78,5 +68,33 @@
 }
 
 .main__carrusel__img{
-    width: var(--widthImg);
+    width: var(--widthImgCarrousel);
+}
+
+/*Etiquetas js*/
+.main__title--change{
+    color: red;
+    text-align: center;
+}
+
+.header__btn--click{
+    background-color: var(--backgroundColor);
+    color: aliceblue;
+}
+
+.header--active{
+    background-color: aqua;
+    padding:2rem;
+}
+
+.destacar{
+    font-weight: bold;
+    font-size: 1.5rem;
+    margin:2rem;
+}
+
+.texto{
+    color : white;
+    background-color: red;
+    margin: 2rem;
 }
