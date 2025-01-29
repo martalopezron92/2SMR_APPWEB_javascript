@@ -27,15 +27,19 @@
 
 .main{
     margin:5rem 3rem 5rem 3rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .main__data{
     display:flex;
-    justify-content: center;
+    /* flex-wrap: wrap; */
+    justify-content: space-evenly;
 }
 
 .main__data__form{
-    width: 30%;
+    width: 20%;
     display: flex;
     flex-wrap: wrap;
     align-items: flex-start
@@ -44,7 +48,7 @@
 .main__data__form__label{
     width: 80%;
     margin-bottom: 3rem;
-    font-weight: bold;
+    /* font-weight: bold; */
 }
 
 .main__data__form__input{
@@ -52,16 +56,38 @@
     border-width: 0.1rem;
     padding: 0.25rem;
     border-radius: 0.25rem;
-    background-color: var(--accentColorPrimary);
+    background-color: var(--accentColorSecundary);
 }
 
 .main__data__form__btn{
+    width: 60%;
+    margin-bottom: 0.7rem;
+    text-align: center;
     padding: 0.4rem;
     border-radius: 0.25rem;
     background-color: var(--secundaryColor);
     color: var(--accentColorSecundary);
     border-width: 0.1rem;
     border-color: var(--secundaryColor);
+    /* font-weight: bold; */
 }
 
+.main__result{
+    width: 20rem;
+    height: 20rem;
+    color: var(--accentColorPrimary);
+    font-size: 10rem;
+    text-align: center;
+}
+
+.errorMessage{
+    background-color: #f29080;
+    padding: 1rem;
+    width: 50%;
+    color: red;
+    border-radius: 0.25rem;
+    border:none;
+    margin-bottom: 3rem;
+    text-align: center;
+}
 

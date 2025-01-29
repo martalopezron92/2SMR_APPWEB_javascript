@@ -18,12 +18,13 @@
         <section class="main__data">
             <form class="main__data__form">
                 <label for="alojamiento" class="main__data__form__label">Gastos de alojamiento</label>
-                <input type="text" id = "alojamiento" class="main__data__form__input">
+                <input type="number" id = "alojamiento" class="main__data__form__input">
                 <label for="alimentacion" class="main__data__form__label">Gastos de alimentacion</label>
-                <input type="text" id = "alimentacion"  class="main__data__form__input">
+                <input type="number" id = "alimentacion"  class="main__data__form__input">
                 <label for="ocio" class="main__data__form__label">Gastos de ocio</label>
-                <input type="text" id = "ocio"  class="main__data__form__input">
-                <button class="main__data__form__btn">Calcular total</button>
+                <input type="number" id = "ocio"  class="main__data__form__input">
+                <button class="main__data__form__btn main__data__form__btn--calculate" type="button">Calcular total</button>
+                <button class="main__data__form__btn main__data__form__btn--reset" type="button">Resetear</button>
             </form>
             <article class="main__result"></article>
         </section>
