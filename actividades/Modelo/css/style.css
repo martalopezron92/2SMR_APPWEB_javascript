@@ -1,7 +1,7 @@
 /* Variables globales */
 :root{
    --backgroundColor: red;
-   --widthButton:20rem;
+   --widthButton: 7rem;
    --widthImg:25%;
    --widthImgCarrousel:30%;
    --fontFamily:"Montserrat", serif;

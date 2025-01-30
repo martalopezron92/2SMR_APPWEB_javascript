@@ -15,8 +15,25 @@ console.log(document.getElementsByClassName("header__btn")); // Me devuelde un a
 
 
 /* EJ1: Vamos a aprender a seleccionar y modificar un elemento en concreto*/
-let titulo = document.querySelector("h1");
-console.log(titulo.textContent) // Visualizamos el contenido de texto de nuestro objeto
-titulo.textContent = "Hola mundo con JavaScript"; // Modificamos el valor del objeto
-console.log(titulo.innerHTML);
+/* EJ2: Vamos a aprender a cambiar las propiedades css de nuestro objeto (estilos)*/
+function cambiar(){
 
+    /* EJ1*/
+    let titulo = document.querySelector("h1");
+    console.log(titulo.textContent) // Visualizamos el contenido de texto de nuestro objeto
+    titulo.textContent = "Hola mundo con JavaScript"; // Modificamos el valor del objeto
+    
+    // Otra manera de acceder y modificar el contenido de un objeto*/
+    // console.log(titulo.innerHTML); // Accedemos al contenido del objeto
+    // titulo.innerHTML = "<br><br><br><br><em> Hola mundo <em>"; // Admite e interpreta etiquetas html
+
+    /* EJ2*/
+    
+}
+
+/* Para trabajar con eventos, vamos a utilizar la funcion addEventListener*/
+const btn_tit = document.querySelector(".header__btn--change");
+
+btn_tit.addEventListener("click", function(){
+    cambiar();
+});
