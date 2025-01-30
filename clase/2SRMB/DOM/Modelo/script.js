@@ -50,19 +50,21 @@ function cambiar(){
 // EJ3: Vamos a aprender a crear nuevos elementos y objetos dentro de mi html
 function crearDiv(){
 
-    const new_ele = document.createElement("div"); // Creamos un nuevo elemento
-    new_ele.textContent = " Javascript permite crear páginas dinámicas."; //Añadimos contenido
-    new_ele.classList.add("texto"); // Añadimos el estilo
-
-    // Posicionamos nuestro elemento detras del ultimo hijo de nuestra etiqueta padre
-    // const padre = document.querySelector("main");
-    // padre.appendChild(new_ele);
-
-    // Posicionamos nuestro elemento detras de la etiqueta h1
-    const titulo = document.querySelector("h1"); // elemento de referencia
-    titulo.parentNode.insertBefore(new_ele, titulo.nextSibling)
-
-
+    console.log(document.querySelector("div"));
+    if(!document.querySelector("div")){
+        const new_ele = document.createElement("div"); // Creamos un nuevo elemento
+        new_ele.textContent = " Javascript permite crear páginas dinámicas."; //Añadimos contenido
+        new_ele.classList.add("texto"); // Añadimos el estilo
+    
+        // Posicionamos nuestro elemento detras del ultimo hijo de nuestra etiqueta padre
+        // const padre = document.querySelector("main");
+        // padre.appendChild(new_ele);
+    
+        // Posicionamos nuestro elemento detras de la etiqueta h1
+        const titulo = document.querySelector("h1"); // elemento de referencia
+        titulo.parentNode.insertBefore(new_ele, titulo.nextSibling)
+    }
+   
 
 }
 
@@ -81,6 +83,9 @@ btn_tit.addEventListener("click", function(){
 });
 
 btn_blq.addEventListener("click", function(){
+    /* Creamos un nuevo objeto div con propiedades y contenido especifico */
     crearDiv();
+    /* Cambiar la apariencia de mi boton*/
+    this.classList.toggle("header__btn--click");
 });
 
