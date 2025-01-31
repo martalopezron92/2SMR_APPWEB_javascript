@@ -58,11 +58,11 @@ El primer botón de la barra de botones en la parte superior de la página tiene
 El valor de la propiedad display de los botones es **inline-block**. La barra tiene en el atributo class el valor **botones** y cada botón tiene como clase **boton**
 
 
-## Proyecto 2: 
+## Proyecto 2: Ocultar y mostrar elementos mediante JavaScript
 
 Implemente la funcionalidad en JavaScript para alternar la visibilidad de la caja al hacer clic en el botón.
 
-![Ocultar caja](image.png)
+![Ocultar caja](./imagenes/image.png)
 
 **Pasos:**
 
@@ -72,13 +72,15 @@ Implemente la funcionalidad en JavaScript para alternar la visibilidad de la caj
 * Verifica que el programa funcione correctamente. Al hacer clic en el botón, la caja debe desaparecer o aparecer según su estado actual, y el texto del botón debe cambiar en consecuencia.
 
 
-## Proyecto 3:
+## Proyecto 3:Mostrar frases aleatorias mediante JavaScript
 
 Crea un contenedor que vaya mostrando frases de un array de forma aleatoria cuando el usuario interaccione con un botón. Tu objetivo es crear el código JavaScript para que cuando el usuario presione el botón aparezca una frase aleatoria del array frasesFrikisInformatica.
 
-![alt text](image-3.png)
+![alt text](./imagenes/image-3.png)
 
-![alt text](image-4.png)
+![alt text](./imagenes/image-4.png)
+
+Utiliza el siguiente array si quieres para realizar el proyecto.
 
 frasesFrikisInformatica = [
   "Los programadores no tienen errores, solo experiencias inesperadas.",
@@ -165,15 +167,15 @@ frasesFrikisInformatica = [
 ];
 
 
-## Proyecto 4: 
+## Proyecto 4: Agregar tareas a un listado mediante JavaScript
 
 Implementa la funcionalidad de agregar tareas a una lista cuando se hace clic en el botón «Agregar tarea».
 
-![alt text](image-5.png)
+![alt text](./imagenes/image-5.png)
 
-![alt text](image-6.png)
+![alt text](./imagenes/image-6.png)
 
-![alt text](image-7.png)
+![alt text](./imagenes/image-7.png)
 
 Instrucciones:
 
@@ -198,7 +200,7 @@ Pasos:
 * Agrega un evento al botón de agregar tarea para que llame a la función addTask cuando se haga clic en él.
 
 
-## Proyecto 5:
+## Proyecto 5: Selección aleatoria de tareas mediante JavaScript
 
 Modifica el proyecto anterior agregando un nuevo botón que al pulsar seleccione aleatoriamente una de las tareas agregadas.
 Para seleccionar la tarea, se resaltará la tarea en color amarillo.
@@ -206,10 +208,10 @@ Cada vez que se pulse en el botón, se seleccionará una única tarea, que ira c
 Al eliminar la tarea, se eliminará también el color amarillo que resaltaba la tarea seleccionada.
 
 
-![alt text](image-8.png)
+![alt text](./imagenes/image-8.png)
 
-![alt text](image-9.png)
+![alt text](./imagenes/image-9.png)
 
-![alt text](image-10.png)
+![alt text](./imagenes/image-10.png)
 
-![alt text](image-11.png)
+![alt text](./imagenes/image-11.png)
