@@ -93,7 +93,26 @@ function fuentesImg(){
     }else{
         borrar();
     }
-    
+}
+
+function intercalar(){
+
+    if(!document.querySelector("div")){
+        let div = document.createElement("div"); //Creo el elemento
+        div.textContent = "Pagina Modelo"; //Modifico el contenido
+        div.classList.add("destacar"); //Añadimos el estilo (clase de css)
+
+        // Posicionamos nuestro nuevo elemento dentro de nuestro documento
+        // Lo ponemos al final de nuestro main
+        // const main = document.querySelector("main");
+        // main.appendChild(div);
+
+        // Lo ponemos detras del titulo principal
+        const parrafo = document.querySelector(".main__txt");
+        parrafo.parentNode.insertBefore(div, parrafo.nextSibling);
+    }else{
+        borrar();
+    }
 
 }
 
@@ -105,6 +124,7 @@ const btn_rmv = document.querySelector(".header__btn--remove");
 const imgs = document.querySelectorAll(".main__sub__fig__img");
 const btn_fon = document.querySelector(".header__btn--font");
 const btn_cls = document.querySelector(".header__btn--cls");
+const btn_sub = document.querySelector(".header__btn--subt");
 
 
 /* Ejercicio 1 y 2*/
@@ -194,6 +214,16 @@ btn_cls.addEventListener("click", function(){
 
     const header = document.querySelector("header");
     header.classList.toggle("header--active");
+    /*Modificando el estilo del boton al pulsar click*/
+    this.classList.toggle("header__btn--click");
+
+});
+
+/*Ejercicio 8*/
+btn_sub.addEventListener("click", function(){
+
+    /* Llamamos a la funcion intercalar*/
+    intercalar();
     /*Modificando el estilo del boton al pulsar click*/
     this.classList.toggle("header__btn--click");
 
