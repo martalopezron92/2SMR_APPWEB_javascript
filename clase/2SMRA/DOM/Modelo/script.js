@@ -42,7 +42,7 @@ function cambiar(){
 }
 
 
-/*Ejercicio 3*/
+/*Ejercicio 3: Creacion de un nuevo elemento en nuestro html de manera dinamica*/
 function creaDiv(){
 
     if(!document.querySelector("div")){
@@ -58,14 +58,28 @@ function creaDiv(){
         // Lo ponemos detras del titulo principal
         const titulo = document.querySelector("h1");
         titulo.parentNode.insertBefore(div, titulo.nextSibling);
+    }else{
+        borrar();
+    }
+
+}
+
+/* Ejercicio 4: Eliminacion de un elemento de html de manera dinamica*/
+function borrar(){
+
+    const new_ele = document.querySelector("div");
+    if(new_ele){
+        new_ele.remove();
     }
 
 }
 
 
+
 /* ------ Parte principal de mi codigo (Eventos) -----*/
 const btn_tit = document.querySelector(".header__btn--change");
 const btn_blq = document.querySelector(".header__btn--create");
+const btn_rmv = document.querySelector(".header__btn--remove");
 
 
 /* Ejercicio 1 y 2*/
@@ -92,7 +106,24 @@ btn_blq.addEventListener("click", function(){
     creaDiv();
     /*Modificando el estilo del boton al pulsar click*/
     this.classList.toggle("header__btn--click");
+
+    /* Establecemos una relacion entre los botones de crear bloque y borrar bloque*/
+    /* Si el boton de borrar esta activo al pulsaar el boton de crear, cambiamos su color*/
+    if(btn_rmv.classList.contains("header__btn--click")){
+        btn_rmv.classList.remove("header__btn--click");
+    }
 });
+
+btn_rmv.addEventListener("click", function(){
+    borrar();
+    this.classList.add("header__btn--click");
+
+    /* Establecemos una relacion entre los botones de crear bloque y borrar bloque*/
+    /* Si el boton de crear bloque esta activo al pulsaar el boton de borrar, cambiamos su color*/
+    if(btn_blq.classList.contains("header__btn--click")){
+        btn_blq.classList.remove("header__btn--click");
+    }
+})
 
 
 
