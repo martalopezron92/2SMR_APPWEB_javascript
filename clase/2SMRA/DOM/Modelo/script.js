@@ -94,15 +94,16 @@ btn_tit.addEventListener("click", function(){
     //     cambiar();
     // }
 
-    /*Modificamos el contenido y el estilo del titulo*/
+    /*Modificamos el contenido y el estilo del titulo llamando a la funcion cambiar*/
     cambiar();
     /*Modificando el estilo del boton al pulsar click*/
     this.classList.toggle("header__btn--click");
 
 });
 
+/* Ejercicio 3*/
 btn_blq.addEventListener("click", function(){
-    /* Creamos un nuevo elemento en html*/
+    /* Creamos un nuevo elemento en html llamando a la funcion creaDiv*/
     creaDiv();
     /*Modificando el estilo del boton al pulsar click*/
     this.classList.toggle("header__btn--click");
@@ -114,8 +115,14 @@ btn_blq.addEventListener("click", function(){
     }
 });
 
+/*Ejercicio 4*/
 btn_rmv.addEventListener("click", function(){
+
+    /* Borramos el bloque div (si existe) llamando a la funcion borrar*/
     borrar();
+    
+    /* Marcamos en rojo el boton de borrar bloque. Se mantendrá seleccionado hasta que no se 
+    marque el boton de crear bloque de nuevo*/
     this.classList.add("header__btn--click");
 
     /* Establecemos una relacion entre los botones de crear bloque y borrar bloque*/
