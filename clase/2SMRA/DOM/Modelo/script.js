@@ -75,11 +75,11 @@ function borrar(){
 }
 
 
-
 /* ------ Parte principal de mi codigo (Eventos) -----*/
 const btn_tit = document.querySelector(".header__btn--change");
 const btn_blq = document.querySelector(".header__btn--create");
 const btn_rmv = document.querySelector(".header__btn--remove");
+const imgs = document.querySelectorAll(".main__sub__fig__img");
 
 
 /* Ejercicio 1 y 2*/
@@ -120,7 +120,7 @@ btn_rmv.addEventListener("click", function(){
 
     /* Borramos el bloque div (si existe) llamando a la funcion borrar*/
     borrar();
-    
+
     /* Marcamos en rojo el boton de borrar bloque. Se mantendrá seleccionado hasta que no se 
     marque el boton de crear bloque de nuevo*/
     this.classList.add("header__btn--click");
@@ -130,6 +130,26 @@ btn_rmv.addEventListener("click", function(){
     if(btn_blq.classList.contains("header__btn--click")){
         btn_blq.classList.remove("header__btn--click");
     }
+})
+
+// Accedemos a cada una de las imagenes (array) a traves del forEach y activamos un evento al hacer click en
+// alguna de ellas
+imgs.forEach(imagen => {
+
+    // Activamos el evento al hacer click sobre la imagen 
+    imagen.addEventListener("click", function(){
+
+        const txt = imagen.alt; // Accedemos al valor del atributo alt de nuestro objeto imagen
+        const piePagina = imagen.nextSibling; // Nos devuelve el elemento hermano (más próximo) de nuestro objeto imagen
+        
+        // Visualizamos cuando la cadena esta vacía. En caso de no modificamos su contenido con el valor de la variable txt
+        if(piePagina.textContent.trim() == ""){
+            piePagina.textContent = txt;
+        }else{
+            piePagina.textContent = "";
+        }
+       
+    })
 })
 
 
