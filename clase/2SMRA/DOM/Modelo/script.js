@@ -1,25 +1,25 @@
 
 /*--------------- Pruebas iniciales de JavaScript ------------*/
 /* Seleccionar un unico elemento */
-// console.log(document.getElementsByTagName("h1")); /*Seleccionando por etiqueta*/
-// console.log(document.getElementsByClassName("main__title")); /*Seleccionando por clase*/
-// console.log(document.querySelector("h1")); /*Seleccionando por etiqueta*/
-// console.log(document.querySelector(".main__title")); /*Seleccionando por clase*/
+console.log(document.getElementsByTagName("h1")); /*Seleccionando por etiqueta*/
+console.log(document.getElementsByClassName("main__title")); /*Seleccionando por clase*/
+console.log(document.querySelector("h1")); /*Seleccionando por etiqueta*/
+console.log(document.querySelector(".main__title")); /*Seleccionando por clase*/
 
-// /* Seleccionar multiples elementos*/
-// console.log(document.querySelectorAll(".header__btn"));
-// console.log(document.querySelector(".header__btn"));
-// console.log(document.getElementsByClassName("header__btn"));
+/* Seleccionar multiples elementos*/
+console.log(document.querySelectorAll(".header__btn"));
+console.log(document.querySelector(".header__btn"));
+console.log(document.getElementsByClassName("header__btn"));
 
-// /* Seleccionar titulo y modificar su valor*/
-// let titulo = document.querySelector("h1");
-// console.log(titulo); /*Devuelve el objeto*/
-// console.log(titulo.textContent); /*Devuelve el valor del objeto*/
-// console.log(titulo.innerHTML); /*Devuelve el valor del objeto*/
-// // titulo.textContent = "Hola mundo con JavaScript"; /*Modifico el valor del objeto*/
-// // titulo.innerHTML = "<br> <br> <em> Hola mundo con JavaScript </em>";
+/* Seleccionar titulo y modificar su valor*/
+let titulo = document.querySelector("h1");
+console.log(titulo); /*Devuelve el objeto*/
+console.log(titulo.textContent); /*Devuelve el valor del objeto*/
+console.log(titulo.innerHTML); /*Devuelve el valor del objeto*/
+// titulo.textContent = "Hola mundo con JavaScript"; /*Modifico el valor del objeto*/
+// titulo.innerHTML = "<br> <br> <em> Hola mundo con JavaScript </em>";
 
-/* --------------- Creacion de funciones -----------------*/
+/* ------------------------- Creacion de funciones ------------------------------*/
 
 /* Ejercicio 1: Creacion de nuestro primer evento */
 function cambiar(){
@@ -74,7 +74,8 @@ function borrar(){
 
 }
 
-/* Ejercicio 6*/
+/* Ejercicio 6: Añadimos un nuevo elemento div con la informacion de las urls de 
+todas las imagenes de nuestro pagina web*/
 function fuentesImg(){
 
     const imgs = document.querySelectorAll("img"); // Seleccionamos todas las imagenes -> Nos devuelve un array con las imagenes
@@ -83,21 +84,27 @@ function fuentesImg(){
         txt += foto.src + "<br>";
     })
 
-    const new_ele = document.createElement("div");
-    new_ele.innerHTML = txt;
-    new_ele.classList.add("texto");
-    padre = document.querySelector("main");
-    padre.appendChild(new_ele);
+    if(!document.querySelector("div")){
+        const new_ele = document.createElement("div");
+        new_ele.innerHTML = txt;
+        new_ele.classList.add("texto");
+        padre = document.querySelector("main");
+        padre.appendChild(new_ele);
+    }else{
+        borrar();
+    }
+    
 
 }
 
 
-/* ------ Parte principal de mi codigo (Eventos) -----*/
+/* ------------------- Parte principal de mi codigo (Eventos) -----------------------*/
 const btn_tit = document.querySelector(".header__btn--change");
 const btn_blq = document.querySelector(".header__btn--create");
 const btn_rmv = document.querySelector(".header__btn--remove");
 const imgs = document.querySelectorAll(".main__sub__fig__img");
 const btn_fon = document.querySelector(".header__btn--font");
+const btn_cls = document.querySelector(".header__btn--cls");
 
 
 /* Ejercicio 1 y 2*/
@@ -150,9 +157,8 @@ btn_rmv.addEventListener("click", function(){
     }
 });
 
-
-// Accedemos a cada una de las imagenes (array) a traves del forEach y activamos un evento al hacer click en
-// alguna de ellas
+/* Ejercicio 5 :Accedemos a cada una de las imagenes (array) a traves del forEach y activamos un evento al hacer click en
+alguna de ellas */
 imgs.forEach(imagen => { 
     // forEach es como el bucle for aplicado sobre el objeto, la variable imagen(variable creada por nosotros) representa cada uno de los elementos del array
     // En la primera iteracion, imagen tomara el valor del imgs[0], en la segunda iteración será imgs[1] y asi sucesivamente.
@@ -173,8 +179,24 @@ imgs.forEach(imagen => {
     })
 });
 
+/* Ejercicio 6*/
 btn_fon.addEventListener("click", function(){
+    /* Creamos un elemento div con la informacion de las urls de las imagenes 
+    llamando a la funcion fuentesImg*/
     fuentesImg();
+
+    /*Modificando el estilo del boton al pulsar click*/
+    this.classList.toggle("header__btn--click");
+});
+
+/* Ejercicio 7*/
+btn_cls.addEventListener("click", function(){
+
+    const header = document.querySelector("header");
+    header.classList.toggle("header--active");
+    /*Modificando el estilo del boton al pulsar click*/
+    this.classList.toggle("header__btn--click");
+
 });
 
 
