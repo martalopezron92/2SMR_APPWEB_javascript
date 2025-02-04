@@ -96,7 +96,11 @@ btn_tit.addEventListener("click", function(){
 
 btn_blq.addEventListener("click", function(){
     /* Creamos un nuevo objeto div con propiedades y contenido especifico */
-    crearDiv();
+    if(this.classList.contains("header__btn--click")){
+        borrar();
+    }else{
+        crearDiv();
+    }
     /* Cambiar la apariencia de mi boton*/
     if(btn_rem.classList.contains("header__btn--click")){
         btn_rem.classList.remove("header__btn--click");
