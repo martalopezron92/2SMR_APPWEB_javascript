@@ -1,5 +1,6 @@
 
 /*--------------- Pruebas iniciales de JavaScript ------------*/
+
 /* Seleccionar un unico elemento */
 console.log(document.getElementsByTagName("h1")); /*Seleccionando por etiqueta*/
 console.log(document.getElementsByClassName("main__title")); /*Seleccionando por clase*/
@@ -74,7 +75,7 @@ function borrar(){
 
 }
 
-/* Ejercicio 6: Añadimos un nuevo elemento div con la informacion de las urls de 
+/* Ejercicio 6: Creación de un div con la informacion de las urls de 
 todas las imagenes de nuestro pagina web*/
 function fuentesImg(){
 
@@ -95,19 +96,21 @@ function fuentesImg(){
     }
 }
 
+/* Ejercicio 8: Modificación de la funcion creaDiv para crear un nuevo div debajo del
+elemento con la clase .main__txt y con la clase .destacar*/
 function intercalar(){
 
     if(!document.querySelector("div")){
         let div = document.createElement("div"); //Creo el elemento
         div.textContent = "Pagina Modelo"; //Modifico el contenido
-        div.classList.add("destacar"); //Añadimos el estilo (clase de css)
+        div.classList.add("destacar"); //Añado el estilo (clase de css)
 
         // Posicionamos nuestro nuevo elemento dentro de nuestro documento
         // Lo ponemos al final de nuestro main
         // const main = document.querySelector("main");
         // main.appendChild(div);
 
-        // Lo ponemos detras del titulo principal
+        // Lo ponemos detras del elemento ".main_txt"
         const parrafo = document.querySelector(".main__txt");
         parrafo.parentNode.insertBefore(div, parrafo.nextSibling);
     }else{
@@ -118,6 +121,8 @@ function intercalar(){
 
 
 /* ------------------- Parte principal de mi codigo (Eventos) -----------------------*/
+
+/* Para trabajar con eventos, vamos a utilizar la funcion addEventListener*/
 const btn_tit = document.querySelector(".header__btn--change");
 const btn_blq = document.querySelector(".header__btn--create");
 const btn_rmv = document.querySelector(".header__btn--remove");
@@ -177,7 +182,8 @@ btn_rmv.addEventListener("click", function(){
     }
 });
 
-/* Ejercicio 5 :Accedemos a cada una de las imagenes (array) a traves del forEach y activamos un evento al hacer click en
+/* Ejercicio 5 */
+/*Accedemos a cada una de las imagenes (array) a traves del forEach y activamos un evento al hacer click en
 alguna de ellas */
 imgs.forEach(imagen => { 
     // forEach es como el bucle for aplicado sobre el objeto, la variable imagen(variable creada por nosotros) representa cada uno de los elementos del array
@@ -201,8 +207,8 @@ imgs.forEach(imagen => {
 
 /* Ejercicio 6*/
 btn_fon.addEventListener("click", function(){
-    /* Creamos un elemento div con la informacion de las urls de las imagenes 
-    llamando a la funcion fuentesImg*/
+    /*Creamos un elemento div con la informacion de las urls de las imagenes llamando a la 
+    funcion fuentesImg*/
     fuentesImg();
 
     /*Modificando el estilo del boton al pulsar click*/
@@ -211,7 +217,7 @@ btn_fon.addEventListener("click", function(){
 
 /* Ejercicio 7*/
 btn_cls.addEventListener("click", function(){
-
+    // Cambiamos la clase al header de nuestra página
     const header = document.querySelector("header");
     header.classList.toggle("header--active");
     /*Modificando el estilo del boton al pulsar click*/
@@ -221,7 +227,6 @@ btn_cls.addEventListener("click", function(){
 
 /*Ejercicio 8*/
 btn_sub.addEventListener("click", function(){
-
     /* Llamamos a la funcion intercalar*/
     intercalar();
     /*Modificando el estilo del boton al pulsar click*/

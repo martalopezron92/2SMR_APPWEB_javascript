@@ -1,6 +1,5 @@
 # Ejercicio de JavaScript DOM
 
-
 ## Proyecto 1: Accediendo, manipulando y creando elementos del DOM
 
 En este primer proyecto vamos a practicar como acceder a los elementos de la página web, así como a crearlos y eliminarlos. 

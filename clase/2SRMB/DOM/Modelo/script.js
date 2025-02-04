@@ -26,6 +26,7 @@ function cambiar(){
     let titulo = document.querySelector("h1");
     const contenido = titulo.textContent;
     console.log(titulo.textContent) // Visualizamos el contenido de texto de nuestro objeto
+
     if(contenido == "Hola mundo con JavaScript"){
         titulo.textContent = "Hola mundo";
     }else{
@@ -50,10 +51,9 @@ function cambiar(){
 // EJ3: Vamos a aprender a crear nuevos elementos y objetos dentro de mi html
 function crearDiv(){
 
-    console.log(document.querySelector("div"));
     if(!document.querySelector("div")){
         const new_ele = document.createElement("div"); // Creamos un nuevo elemento
-        new_ele.textContent = " Javascript permite crear páginas dinámicas."; //Añadimos contenido
+        new_ele.textContent = "Javascript permite crear páginas dinámicas."; //Añadimos contenido
         new_ele.classList.add("texto"); // Añadimos el estilo
     
         // Posicionamos nuestro elemento detras del ultimo hijo de nuestra etiqueta padre
@@ -63,6 +63,14 @@ function crearDiv(){
         // Posicionamos nuestro elemento detras de la etiqueta h1
         const titulo = document.querySelector("h1"); // elemento de referencia
         titulo.parentNode.insertBefore(new_ele, titulo.nextSibling)
+    }
+
+    //EJ4: Vamos a aprender a borrar elementos de nuestro html de manera dinámica
+    function borrar(){
+
+        const ele_sel = document.querySelector("div"); // Seleccionamos el elemento a eliminar
+        ele_sel.remove(); // Eliminamos el elemento de nuestro documento
+
     }
    
 
