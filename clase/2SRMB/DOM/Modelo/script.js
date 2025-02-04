@@ -75,7 +75,23 @@ function crearDiv(){
     if(ele_sel){
         ele_sel.remove(); // Eliminamos el elemento de nuestro documento
     }
-    
+}
+
+//EJ 6: Vamos a acceder a la propiedad src de multiples imagenes y vamos a guardar
+// esa información en una variable que despues mostraremos en un nuevo contenedor div 
+// que crearemos al final de nuestra web
+function fuentesImg(){
+
+    const imgs = document.querySelectorAll("img"); //Devuelve un array de imagenes
+    let txt = "";
+    imgs.forEach(imagen =>{
+        txt += imagen.src;
+    });
+
+    const new_ele = document.createElement("p");
+    new_ele.textContent = txt;
+    const padre = document.querySelector("main");
+    padre.appendChild(new_ele);
 
 }
 
@@ -87,8 +103,6 @@ const btn_tit = document.querySelector(".header__btn--change");
 const btn_blq = document.querySelector(".header__btn--create");
 const btn_rem = document.querySelector(".header__btn--remove");
 const imgs = document.querySelectorAll(".main__sub__fig__img");
-
-console.log(imgs);
 
 btn_tit.addEventListener("click", function(){
     /* Cambiar el contenido y la apariencia (css) de mi etiqueta*/
@@ -140,3 +154,4 @@ imgs.forEach(foto =>{
 })
 
 
+fuentesImg();
