@@ -15,7 +15,7 @@ console.log(document.querySelector(".header__btn")); // Solo se queda con el pri
 console.log(document.querySelectorAll(".header__btn")); // Me devuelve un array de objetos
 console.log(document.getElementsByClassName("header__btn")); // Me devuelde un array de objetos
 
-
+console.clear();
 /* ------------------------ Funciones ------------------------------*/
 
 /* EJ1: Vamos a aprender a seleccionar y modificar un elemento en concreto*/
@@ -86,6 +86,9 @@ function crearDiv(){
 const btn_tit = document.querySelector(".header__btn--change");
 const btn_blq = document.querySelector(".header__btn--create");
 const btn_rem = document.querySelector(".header__btn--remove");
+const imgs = document.querySelectorAll(".main__sub__fig__img");
+
+console.log(imgs);
 
 btn_tit.addEventListener("click", function(){
     /* Cambiar el contenido y la apariencia (css) de mi etiqueta*/
@@ -117,6 +120,23 @@ btn_rem.addEventListener("click",function(){
     this.classList.toggle("header__btn--click");
 });
 
-// Esto es una modificacion nueva para mergear
+// EJ5: Accedemos a multiples fotos y accionamos un evento al pulsar en una de ellas. El evento
+// solo se accionará sobre el elmento pulsado y no sobre el resto
+imgs.forEach(foto =>{
+    // ForEach es un for que se aplica sobre un array de objetos de la siguiente manera:
+    // En la primera iter del bucle, la variable foto (nombre elegido por nosotros, como i en for)
+    // tomará el valor del primer objeto del array imgs.
+    // En la segunda iter del bucle, la varible foto tomará el valor del segundo objeto del array imgs
+    // Y así sucesivamente hasta llegar al ultimo objeto del array
+    foto.addEventListener("click", function(){
+        const txt = foto.nextSibling; // Seleccionamos el elemento hermano del objeto seleccionado
+        if(txt.textContent.trim() == ""){
+            txt.textContent = foto.alt; // Accedemos a la propiedad alt del objeto foto
+        }else{
+            txt.textContent = "";
+        }
+        
+    });
+})
 
 
