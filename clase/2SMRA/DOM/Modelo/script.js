@@ -130,6 +130,7 @@ const imgs = document.querySelectorAll(".main__sub__fig__img");
 const btn_fon = document.querySelector(".header__btn--font");
 const btn_cls = document.querySelector(".header__btn--cls");
 const btn_sub = document.querySelector(".header__btn--subt");
+const img_car = document.querySelector(".main__carrusel__img");
 
 
 /* Ejercicio 1 y 2*/
@@ -231,6 +232,30 @@ btn_sub.addEventListener("click", function(){
     intercalar();
     /*Modificando el estilo del boton al pulsar click*/
     this.classList.toggle("header__btn--click");
+
+});
+
+console.clear();
+/*Ejercicio 9*/
+img_car.addEventListener("click", function(){
+
+    const imgs = document.querySelectorAll(".main__sub__fig__img");
+    const url = this.src;
+    let pos = 0;
+    let cont = 0;
+
+    imgs.forEach(foto =>{
+        if(url == foto.src){
+            pos = cont;
+        }
+        cont++;
+    });
+
+    if(pos == imgs.length - 1){
+        this.src = imgs[0].src;
+    }else{
+        this.src = imgs[pos + 1].src;
+    }
 
 });
 
