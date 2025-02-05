@@ -119,6 +119,9 @@ function intercalar(){
 
 }
 
+// Ejercicio 10: Queremos ocultar todos los botones excepto el de abrir-cerrar
+
+
 
 /* ------------------- Parte principal de mi codigo (Eventos) -----------------------*/
 
@@ -131,6 +134,8 @@ const btn_fon = document.querySelector(".header__btn--font");
 const btn_cls = document.querySelector(".header__btn--cls");
 const btn_sub = document.querySelector(".header__btn--subt");
 const img_car = document.querySelector(".main__carrusel__img");
+const btn_opn = document.querySelector(".header__btn--open");
+const btns = document.querySelectorAll(".header__btn");
 
 
 /* Ejercicio 1 y 2*/
@@ -236,6 +241,7 @@ btn_sub.addEventListener("click", function(){
 });
 
 console.clear();
+
 /*Ejercicio 9*/
 img_car.addEventListener("click", function(){
 
@@ -259,5 +265,45 @@ img_car.addEventListener("click", function(){
 
 });
 
+
+/* Ejercicio 10 -- Sin funciones*/
+btn_opn.addEventListener("click", function(){
+
+    btns.forEach(boton =>{
+
+        // Nos aseguramos que el elemento boton no es el boton que activa el evento
+        if(boton != this){
+
+            /* Primera manera de hacerlo*/
+            // if(boton.style.display == "none"){
+            //     boton.style.display = "block";
+            // }else{
+            //     boton.style.display = "none";
+            // }
+
+            /* Segunda manera de hacerlo*/
+            boton.classList.toggle("oculto");
+        }
+      
+    })
+
+});
+
+/*------------------------------ IMPORTANTE -------------------------------*/
+
+// Notas a tener en cuenta:
+// Para calcular números aleatorios de 0 a n utilizamos la siguiente formula:
+// rand_number = Math.floor(Math.rand()*n)
+
+// Para trabajar con formularios:
+// - Para acceder al contenido de la etiqueta input utilizaremos la propiedad value
+// Ejemplo:
+// const dato = document.querySelect("input");
+// console.log(dato.value) // Para visualizar el contenido 
+// dato.value = "Modificado"; // Para modificar el contenido
+// - Al crear una etiqueta button tenemos que indicar el atributo type = "button" para no
+// mandar la información al servidor y poder trabajar desde front.
+// Teneis un ejemplo de como trabajar con formularios en actividades/Basico/ los códigos:
+// 01_calculadora_gastos.html, 01_calculadora_gastos.css, 01_calculadora_gastos.js
 
 
