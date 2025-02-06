@@ -85,11 +85,13 @@ function fuentesImg(){
     const imgs = document.querySelectorAll("img"); //Devuelve un array de imagenes
     let txt = "";
     imgs.forEach(imagen =>{
-        txt += imagen.src;
+        txt += imagen.src + "<br>";
     });
 
-    const new_ele = document.createElement("p");
-    new_ele.textContent = txt;
+    const new_ele = document.createElement("p"); // Creando un elemento nuevo
+    new_ele.innerHTML = txt; // Modificando el contenido de ese elemento
+    new_ele.classList.add("texto");
+    // Aqui posicionamos dentro del html nuestro nuevo elemento
     const padre = document.querySelector("main");
     padre.appendChild(new_ele);
 
@@ -103,6 +105,7 @@ const btn_tit = document.querySelector(".header__btn--change");
 const btn_blq = document.querySelector(".header__btn--create");
 const btn_rem = document.querySelector(".header__btn--remove");
 const imgs = document.querySelectorAll(".main__sub__fig__img");
+const btn_fnt = document.querySelector(".header__btn--font");
 
 btn_tit.addEventListener("click", function(){
     /* Cambiar el contenido y la apariencia (css) de mi etiqueta*/
@@ -153,5 +156,10 @@ imgs.forEach(foto =>{
     });
 })
 
+btn_fnt.addEventListener("click", function(){
+    // Llamamos a la funcion fuentesImg para crear un parrafo con las urls de las fotos
+    fuentesImg();
 
-fuentesImg();
+    //Modificamos el color del boton al clickar
+    this.classList.toggle("header__btn--click");
+});
