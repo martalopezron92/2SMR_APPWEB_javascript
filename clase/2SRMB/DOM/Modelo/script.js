@@ -105,9 +105,40 @@ function fuentesImg(){
         const ele_sel = document.querySelector(".fuente--create"); // Seleccionamos el elemento a eliminar
         ele_sel.remove(); // Eliminamos el elemento de nuestro documento
     }
-  
-
 }
+
+// EJ 9: Vamos a aprender a hacer cambios dinámicos de imagenes cada vez que pulsamos
+// click sobre la imagen del carrusel
+function CarruselImg(){
+
+    const ppal = document.querySelector(".main__carrusel__img"); // Seleccionamos la imagen del carrusel
+    const imgs = document.querySelectorAll(".main__sub__fig__img"); // Devuelve un array de imagenes de la seccion principal
+
+    // Variables auxiliares
+    let pos = 0; // Para indicar la posición en la que nos encontramos dentro del array cada vez que hacemos click sobre la imagen del carrusel
+    let cont = 0; // Para contar cada iteración del bucle
+    imgs.forEach(foto =>{
+        if(foto.src == ppal.src){
+            // Cuando la imagen del carrusel coincide con una de las imagenes del array
+            // se guarda el valor de la posición
+            pos = cont; 
+        }
+        cont++;
+    });
+
+    if(ppal.src == imgs[imgs.length - 1].src){
+        // Si la imagen del carrusel coincide con la ultima imagen del array
+        // actualizamos el valor de la url de la imagen del carrusel por la url
+        // de la primera imagen 
+        ppal.src = imgs[0].src;
+    }else{
+        // Actualizamos el valor de la url de la imagen del carrusel por el siguiente url
+        // del array de imagenes
+        ppal.src = imgs[pos + 1].src;
+    }
+}
+
+
 
 
 /*---------------------- Eventos y parte principal del codigo ---------------*/
@@ -118,6 +149,7 @@ const btn_blq = document.querySelector(".header__btn--create");
 const btn_rem = document.querySelector(".header__btn--remove");
 const imgs = document.querySelectorAll(".main__sub__fig__img");
 const btn_fnt = document.querySelector(".header__btn--font");
+const btn_car = document.querySelector(".main__carrusel__img");
 
 // Evento asociado al EJ1 y EJ2
 btn_tit.addEventListener("click", function(){
@@ -184,4 +216,12 @@ btn_fnt.addEventListener("click", function(){
 
     //Modificamos el color del boton al clickar
     this.classList.toggle("header__btn--click");
+});
+
+// Evento asociado al EJ7
+btn_car.addEventListener("click", function(){
+    // Llamamos a la funcion Carrusel para crear el efecto de cambio de imagenes
+    // de manera ciclica cada vez que pulsamos en la foto
+    CarruselImg()
+
 });
