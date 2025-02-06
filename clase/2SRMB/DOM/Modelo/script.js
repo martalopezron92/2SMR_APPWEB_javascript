@@ -83,19 +83,25 @@ function crearDiv(){
 function fuentesImg(){
 
     const imgs = document.querySelectorAll("img"); //Devuelve un array de imagenes
+    // Vamos a crear una variable auxiliar que vaya almacenando la información de las url
+    // de las imagenes contenidas en el array imgs
     let txt = "";
     imgs.forEach(imagen =>{
         txt += imagen.src + "<br>";
     });
 
     if(!document.querySelector(".fuente--create")){
+        // Si al hacer click y activar el evento que llama a esta funcion no existe el elemento
+        // entonces lo creamos
         const new_ele = document.createElement("p"); // Creando un elemento nuevo
         new_ele.innerHTML = txt; // Modificando el contenido de ese elemento
-        new_ele.classList.add("texto", "fuente--create");
+        new_ele.classList.add("texto", "fuente--create"); //Nos hemos creado una clase nueva para identificar el elemento
         // Aqui posicionamos dentro del html nuestro nuevo elemento
         const padre = document.querySelector("main");
         padre.appendChild(new_ele);
     }else{
+        // Si al hacer click y activar el evento que llama a esta funcion si existe el elemento
+        // entonces lo borramos
         const ele_sel = document.querySelector(".fuente--create"); // Seleccionamos el elemento a eliminar
         ele_sel.remove(); // Eliminamos el elemento de nuestro documento
     }
@@ -113,6 +119,7 @@ const btn_rem = document.querySelector(".header__btn--remove");
 const imgs = document.querySelectorAll(".main__sub__fig__img");
 const btn_fnt = document.querySelector(".header__btn--font");
 
+// Evento asociado al EJ1 y EJ2
 btn_tit.addEventListener("click", function(){
     /* Cambiar el contenido y la apariencia (css) de mi etiqueta*/
     cambiar();
@@ -120,6 +127,7 @@ btn_tit.addEventListener("click", function(){
     this.classList.toggle("header__btn--click");
 });
 
+// Evento asociado al EJ3
 btn_blq.addEventListener("click", function(){
     /* Creamos un nuevo objeto div con propiedades y contenido especifico */
     if(this.classList.contains("header__btn--click")){
@@ -127,19 +135,26 @@ btn_blq.addEventListener("click", function(){
     }else{
         crearDiv();
     }
-    /* Cambiar la apariencia de mi boton*/
+    
+    /* Si clickamos en el boton de bloque y esta el boton de borrar activado, 
+    (es decir que contiene la clase header__btn--click) eliminamos su clase */
     if(btn_rem.classList.contains("header__btn--click")){
         btn_rem.classList.remove("header__btn--click");
     }
+    /* Cambiar la apariencia de mi boton*/
     this.classList.toggle("header__btn--click");
 });
 
+// Evento asociado al EJ4
 btn_rem.addEventListener("click",function(){
+    // Llamamos a la funcion borrar, para eleiminar el elemento
     borrar();
-    /* Cambiar la apariencia de mi boton*/
+   /* Si clickamos en el boton de borrar y esta el boton de bloque activado, 
+   (es decir que contiene la clase header__btn--click) eliminamos su clase */
     if(btn_blq.classList.contains("header__btn--click")){
         btn_blq.classList.remove("header__btn--click");
     }
+     /* Cambiar la apariencia de mi boton*/
     this.classList.toggle("header__btn--click");
 });
 
@@ -162,6 +177,7 @@ imgs.forEach(foto =>{
     });
 })
 
+// Evento asociado al EJ6
 btn_fnt.addEventListener("click", function(){
     // Llamamos a la funcion fuentesImg para crear un parrafo con las urls de las fotos
     fuentesImg();
