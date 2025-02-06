@@ -88,12 +88,18 @@ function fuentesImg(){
         txt += imagen.src + "<br>";
     });
 
-    const new_ele = document.createElement("p"); // Creando un elemento nuevo
-    new_ele.innerHTML = txt; // Modificando el contenido de ese elemento
-    new_ele.classList.add("texto");
-    // Aqui posicionamos dentro del html nuestro nuevo elemento
-    const padre = document.querySelector("main");
-    padre.appendChild(new_ele);
+    if(!document.querySelector(".fuente--create")){
+        const new_ele = document.createElement("p"); // Creando un elemento nuevo
+        new_ele.innerHTML = txt; // Modificando el contenido de ese elemento
+        new_ele.classList.add("texto", "fuente--create");
+        // Aqui posicionamos dentro del html nuestro nuevo elemento
+        const padre = document.querySelector("main");
+        padre.appendChild(new_ele);
+    }else{
+        const ele_sel = document.querySelector(".fuente--create"); // Seleccionamos el elemento a eliminar
+        ele_sel.remove(); // Eliminamos el elemento de nuestro documento
+    }
+  
 
 }
 
