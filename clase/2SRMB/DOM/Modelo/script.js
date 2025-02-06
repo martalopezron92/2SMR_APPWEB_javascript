@@ -138,6 +138,30 @@ function CarruselImg(){
     }
 }
 
+// EJ10: Vamos a crear un menu despegable ocultando botones
+function OcultaBotones(){
+
+    const btns = document.querySelectorAll(".header__btn"); // Devuelve un array con todos los botones
+    const btn_opn = document.querySelector(".header__btn--open"); // Seleccionamos el boton que no queremos ocultar
+    
+    // Recorremos todos los botones y le cambiamos la propiedad display para ocultarlos
+    btns.forEach(btn =>{
+        // Garantizamos que no ocultamos el boton de abrir y cerrar
+        if(btn_opn != btn){
+
+            // Forma 1: Modificando las propiedades del objeto directamente
+            // if(btn.style.display != "none"){
+            //     btn.style.display = "none";
+            // }else{
+            //     btn.style.display = "block";
+            // }   
+
+            // Forma 2 (más elegante): Añadiendo o eliminado una clase definida previamente en css
+            btn.classList.toggle("oculto");
+        }
+        
+    })
+}
 
 
 
@@ -150,6 +174,7 @@ const btn_rem = document.querySelector(".header__btn--remove");
 const imgs = document.querySelectorAll(".main__sub__fig__img");
 const btn_fnt = document.querySelector(".header__btn--font");
 const btn_car = document.querySelector(".main__carrusel__img");
+const btn_opn = document.querySelector(".header__btn--open");
 
 // Evento asociado al EJ1 y EJ2
 btn_tit.addEventListener("click", function(){
@@ -218,10 +243,23 @@ btn_fnt.addEventListener("click", function(){
     this.classList.toggle("header__btn--click");
 });
 
-// Evento asociado al EJ7
+// Evento asociado al EJ9
 btn_car.addEventListener("click", function(){
     // Llamamos a la funcion Carrusel para crear el efecto de cambio de imagenes
     // de manera ciclica cada vez que pulsamos en la foto
     CarruselImg()
 
 });
+
+// Evento asociado al EJ10
+btn_opn.addEventListener("click", function(){
+
+    // Llamamos a la funcion OcultaBotones() para crear el efecto
+    // de menu despegable
+    OcultaBotones();
+
+    // Cambiamos los colores del botón al clickar
+    this.classList.toggle("header__btn--click");
+
+});
+
