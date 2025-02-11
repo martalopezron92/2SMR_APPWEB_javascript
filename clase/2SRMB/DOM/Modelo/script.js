@@ -51,7 +51,7 @@ function cambiar(){
 // EJ3: Vamos a aprender a crear nuevos elementos y objetos dentro de mi html
 function crearDiv(){
 
-    if(!document.querySelector("div")){
+    if(!document.querySelector(".texto")){
         const new_ele = document.createElement("div"); // Creamos un nuevo elemento
         new_ele.textContent = "Javascript permite crear páginas dinámicas."; //Añadimos contenido
         new_ele.classList.add("texto"); // Añadimos el estilo
@@ -163,6 +163,36 @@ function OcultaBotones(){
     })
 }
 
+// EJ7: Vamos a aplicar (añadir) una nueva clase a un objeto de nuestro html
+function headerStyle(){
+
+    // Seleccionamos el header
+    const hdr = document.querySelector(".header");
+
+    // Modificamos la apariencia de nuestro header añandiendo una nueva clase
+    hdr.classList.toggle("header--active");
+
+}
+
+// EJ8: Vamos a modificar la funcion CreaDiv para crear un nuevo elemento con un contenido y una apariencia distintas
+function intercalar(){
+
+    if(!document.querySelector(".destacar")){
+        const new_ele = document.createElement("div"); // Creamos un nuevo elemento
+        new_ele.textContent = "Pagina Modelo"; //Añadimos contenido
+        new_ele.classList.add("destacar"); // Añadimos el estilo
+    
+        // Posicionamos nuestro elemento detras del ultimo hijo de nuestra etiqueta padre
+        // const padre = document.querySelector("main");
+        // padre.appendChild(new_ele);
+    
+        // Posicionamos nuestro elemento detras de la etiqueta h1
+        const titulo = document.querySelector("h1"); // elemento de referencia
+        titulo.parentNode.insertBefore(new_ele, titulo.nextSibling)
+    }   
+
+}
+
 
 
 /*---------------------- Eventos y parte principal del codigo ---------------*/
@@ -175,6 +205,8 @@ const imgs = document.querySelectorAll(".main__sub__fig__img");
 const btn_fnt = document.querySelector(".header__btn--font");
 const btn_car = document.querySelector(".main__carrusel__img");
 const btn_opn = document.querySelector(".header__btn--open");
+const btn_cls = document.querySelector(".header__btn--cls");
+const btn_sub = document.querySelector(".header__btn--subt");
 
 // Evento asociado al EJ1 y EJ2
 btn_tit.addEventListener("click", function(){
@@ -262,4 +294,24 @@ btn_opn.addEventListener("click", function(){
     this.classList.toggle("header__btn--click");
 
 });
+
+// Evento asociado al EJ7
+btn_cls.addEventListener("click", function(){
+    // Llamamos a la funcion
+    headerStyle();
+
+    // Cambiamos los colores del boton al clickar
+    this.classList.toggle("header__btn--click");
+});
+
+// Evento asociado al EJ8
+btn_sub.addEventListener("click", function(){
+
+    // Llamamos a la funcion intercalar
+    intercalar();
+
+});
+
+
+
 
