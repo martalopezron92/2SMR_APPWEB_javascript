@@ -189,7 +189,10 @@ function intercalar(){
         // Posicionamos nuestro elemento detras de la etiqueta h1
         const titulo = document.querySelector("h1"); // elemento de referencia
         titulo.parentNode.insertBefore(new_ele, titulo.nextSibling)
-    }   
+    }else{
+        // Eliminamos el subtitulo
+        document.querySelector(".destacar").remove(); 
+    }  
 
 }
 
@@ -310,7 +313,29 @@ btn_sub.addEventListener("click", function(){
     // Llamamos a la funcion intercalar
     intercalar();
 
+    // Cambiamos los colores del boton al clickar
+    this.classList.toggle("header__btn--click");
+
 });
+
+
+/*------------------------------ IMPORTANTE -------------------------------*/
+
+// Notas a tener en cuenta:
+// Para calcular números aleatorios de 0 a n utilizamos la siguiente formula:
+// rand_number = Math.floor(Math.rand()*n)
+
+// Para trabajar con formularios:
+// - Para acceder al contenido de la etiqueta input utilizaremos la propiedad value
+// Ejemplo:
+// const dato = document.querySelect("input");
+// console.log(dato.value) // Para visualizar el contenido 
+// dato.value = "Modificado"; // Para modificar el contenido
+// - Al crear una etiqueta button tenemos que indicar el atributo type = "button" para no
+// mandar la información al servidor y poder trabajar desde front.
+// Teneis un ejemplo de como trabajar con formularios en actividades/Basico/ los códigos:
+// 01_calculadora_gastos.html, 01_calculadora_gastos.css, 01_calculadora_gastos.js
+
 
 
 
